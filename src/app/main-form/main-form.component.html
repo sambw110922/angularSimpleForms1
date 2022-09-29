@@ -1,0 +1,36 @@
+
+<div id="mainFormContainer">
+
+    <h2>The form.</h2>
+
+    <!--  The actual form  -->
+    <form [formGroup]="taxFormCalculator" (ngSubmit)="onSubmit(taxFormCalculator)">
+
+        <label for="txtGrossAnual">
+            Gross Annual:
+        </label>
+
+        <input type="text" formControlName="txtGrossAnnual" name="txtGrossAnual" id="txtGrossAnual" />
+
+        <input type="submit" value="SUBMIT" name="btnSubmit" id="btnSubmit" />
+        <input type="reset" value="RESET" name="btnReset" id="btnReset" />
+
+    </form>
+
+    <!-- The results of the calculations -->
+    <div id="resultsContainer">
+
+        <h2>Results</h2>
+
+        <h3>Note: this app was written in 28 September 2022</h3>
+        <h3>Also note: this app only deducts income tax, it ignores other things like national insurance and student loan.</h3>
+
+        <p>Tax rate: {{ this.taxRate }}</p>
+        <p>Gross annual: {{ this.grossAnnual }}</p>
+        <p>Net annual: {{ this.netAnnual }}</p>
+        <p>Gross monthly: {{ this.grossMonthly }}</p>
+        <p>Net monthly: {{ this.netMonthly }}</p>
+
+    </div>
+
+</div>
